@@ -5,6 +5,11 @@ class BikesController < ApplicationController
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
 
+  def show
+    @bike = Bike.find(params[:id])
+    authorize @bike
+  end
+
   def new
     @bike = Bike.new
     authorize @bike
