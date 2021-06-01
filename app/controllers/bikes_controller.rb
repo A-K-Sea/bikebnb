@@ -1,6 +1,9 @@
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  def home
+  end
+  
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
@@ -30,6 +33,6 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:user_id, :category, :brand, :brake_type, :price_per_day, :status, :number_of_gears)
+    params.require(:bike).permit(:user_id, :category, :brand, :brake_type, :price_per_day, :status, :number_of_gears, :photo)
   end
 end
