@@ -1,6 +1,15 @@
 .navbar-lewagon {
+  background: #e4f7db85;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  height: 80px;
+  padding: 0px 40px;
+  color: rgba(13, 36, 2, 0.911);
+}
+
+.bicycle-logo {
+  display: flex;
 }
 
 .navbar-lewagon .navbar-collapse {
