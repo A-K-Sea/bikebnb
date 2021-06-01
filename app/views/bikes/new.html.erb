@@ -2,15 +2,15 @@
   <h1>Add a new bike</h1>
 
   <%= simple_form_for(@bike) do |f| %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :price_per_day, input_html: { min: '0'} %>
   <%= f.input :brand %>
   <%= f.input :category, :collection => Bike::CATEGORIES %>
   <%= f.input :brake_type, :collection => Bike::BRAKES %>
   <%= f.input :number_of_gears, input_html: { min: '0'} %>
   <%= f.input :status, :collection => Bike::AVAILABLE %>
-  <%= f.button :submit , class: ""%>
+  <%= f.button :submit , class: "btn btn-primary"%>
   <% end %>
 </div>
 
-<!-- need to add @bike.user = current_user -->
-<!-- need to add @photo after cloudinary/photo upload integration -->
+cl_image_tag
