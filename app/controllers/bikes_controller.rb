@@ -1,14 +1,16 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
+    @bikes = policy_scope(Bike).order(created_at: :desc)
   end
 
   def new
+    authorize @bike
     @bike = Bike.new
   end
 
   def create
+    authorize @bike
     @bike = Bike.new(bike_params)
     if @bike.save
       redirect_to bikes_path
