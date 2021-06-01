@@ -1,9 +1,35 @@
-<% if policy(Bike).create? %>
-  <%= link_to "New bike", new_bike_path %>
-<% end %>
+<br><br>
 
-<% @bikes.each do |bike| %>
-  <%= bike.category %>
-  <%= bike.brand %>
-  <%= bike.price_per_day %>
-<% end  %>
+<div class="container">
+  <div class="welcome">
+    <h1><em>Have a look at the beautiful bikes we have to offer</em></h1>
+    <div class="button">
+      <button type="button" class="btn btn-success btn-lg">
+        <% if policy(Bike).create? %>
+          <%= link_to "Add a new bike🚲", new_bike_path %>
+        <% end %>
+      </button>
+    </div>
+  </div>
+</div>
+
+<br><br><br>
+
+<div class="container">
+<div class="cards">
+  <% @bikes.each do |bike| %>
+  <div class="card-trip">
+    <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cm9hZCUyMGJpa2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="road bike, wooden wall"/>
+    <div class="card-trip-infos">
+      <div>
+        <h2>Type: <%= bike.category %></h2>
+        <p>Brand: <%= bike.brand %></p>
+        <p>Status: </p>
+      </div>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+      <h2>€<%= bike.price_per_day %></h2>
+    </div>
+  </div>
+  <% end  %>
+</div>
+</div>
