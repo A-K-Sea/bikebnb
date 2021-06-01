@@ -1,12 +1,13 @@
 class BikesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
   end
 
   def new
-    authorize @bike
     @bike = Bike.new
+    authorize @bike
   end
 
   def create

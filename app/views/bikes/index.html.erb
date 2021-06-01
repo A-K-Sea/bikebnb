@@ -1,3 +1,9 @@
 <% if policy(Bike).create? %>
   <%= link_to "New bike", new_bike_path %>
 <% end %>
+
+<% @bikes.each do |bike| %>
+  <%= bike.category %>
+  <%= bike.brand %>
+  <%= bike.price_per_day %>
+<% end  %>
