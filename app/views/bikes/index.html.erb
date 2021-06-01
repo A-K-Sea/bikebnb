@@ -3,22 +3,7 @@
 <% end %>
 
 <% @bikes.each do |bike| %>
-  <%= @bike_category = bike.category %>
-  <%= @bike_brand = bike.brand %>
-  <%= @bike_price = bike.price_per_day %>
+  <%= bike.category %>
+  <%= bike.brand %>
+  <%= bike.price_per_day %>
 <% end  %>
-
-<div class="card-trip">
-  <img src="https://unsplash.com/photos/6tK2Og9dEKA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" alt="road bike"/>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @bike_category %></h2>
-      <p>
-        <%= @bike_brand %>
-        <%= puts "bike test" %>
-      </p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-  </div>
-</div>
-
