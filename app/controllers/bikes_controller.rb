@@ -16,10 +16,12 @@ class BikesController < ApplicationController
   end
 
   def create
-    authorize @bike
     @bike = Bike.new(bike_params)
+    authorize @bike
+    @bike.user = current_user
+
     if @bike.save
-      redirect_to bikes_path
+      redirect_to bike_path(@bike)
     else
       render :new
     end
