@@ -1,9 +1,14 @@
 <div class="container">
-  <button type="button" class="btn btn-success btn-lg">
-    <% if policy(Bike).create? %>
-      <%= link_to "New bike", new_bike_path %>
-    <% end %>
-  </button>
+  <div class="welcome">
+    <h2>All bikes</h2>
+    <div class="button">
+      <button type="button" class="btn btn-success btn-lg">
+        <% if policy(Bike).create? %>
+          <%= link_to "New bike", new_bike_path %>
+        <% end %>
+      </button>
+    </div>
+  </div>
 </div>
 
 <br><br><br>
@@ -19,8 +24,8 @@
         <p>Brand: <%= bike.brand %></p>
         <p>Status: </p>
       </div>
-      <h2 class="card-trip-pricing">Price: €<%= bike.price_per_day %><h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+      <h2>€<%= bike.price_per_day %></h2>
     </div>
   </div>
   <% end  %>
