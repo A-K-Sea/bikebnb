@@ -2,11 +2,11 @@
   <h1>Add a new bike</h1>
 
   <%= simple_form_for(@bike) do |f| %>
-  <%= f.input :price_per_day %>
+  <%= f.input :price_per_day, input_html: { min: '0'} %>
   <%= f.input :brand %>
   <%= f.input :category, :collection => Bike::CATEGORIES %>
   <%= f.input :brake_type, :collection => Bike::BRAKES %>
-  <%= f.input :number_of_gears %>
+  <%= f.input :number_of_gears, input_html: { min: '0'} %>
   <%= f.input :status, :collection => Bike::AVAILABLE %>
   <%= f.button :submit , class: ""%>
   <% end %>
