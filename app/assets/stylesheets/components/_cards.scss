@@ -1,3 +1,9 @@
+.cards { 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -22,6 +28,10 @@
   margin: 0;
 }
 
+.card-trip-pricing h2 { 
+  display: flex;
+  align-items: flex-end;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
