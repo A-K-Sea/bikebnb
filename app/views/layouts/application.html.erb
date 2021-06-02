@@ -14,12 +14,14 @@
   </head>
 
   <body>
-    <%= render "shared/navbar"%>
-    <%= yield %>
+    <div class='main-container'>
+      <%= render "shared/navbar"%>
+      <%= yield %>
       <%# We might want to change the spot of this sweet code %>
 <!--        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p> -->
        
-    <%= render 'shared/footer' %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
