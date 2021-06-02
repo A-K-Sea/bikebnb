@@ -10,7 +10,9 @@
 <div class="cards">
   <% @bikes.each do |bike| %>
   <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cm9hZCUyMGJpa2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="road bike, wooden wall"/>
+    <% if bike.photo.attached? %>
+      <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h2>Type: <%= bike.category %></h2>
