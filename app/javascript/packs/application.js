@@ -16,8 +16,10 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import { loadDynamicBannerText } from '../components/banner';
+import { loadDynamicBannerText } from '../plugins/typed';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
+  initMapbox();
 });

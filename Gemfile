@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # I manually added this! 🍌
 gem 'devise'
 gem 'pundit'
+gem 'geocoder'
 
 # add dotenv to save API keys
 gem 'dotenv-rails', groups: [:development, :test]

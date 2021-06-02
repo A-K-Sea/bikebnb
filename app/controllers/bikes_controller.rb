@@ -3,9 +3,18 @@ class BikesController < ApplicationController
 
   def home
   end
-  
+
   def index
     @bikes = policy_scope(Bike).order(created_at: :desc)
+
+    @markers = @bikes.geocoded.map do |bike|
+      {
+        lat: bike.latitude,
+        lng: bike.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bike: bike }),
+        image_url: helpers.asset_url('bicycle.png')
+      }
+    end
   end
 
   def show
