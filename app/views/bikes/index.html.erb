@@ -18,7 +18,7 @@
           <div>
             <h2>Type: <%= bike.category %></h2>
             <p>Brand: <%= bike.brand %></p>
-            <p>Status: </p>
+            <p>Status: <%= bike.status %></p>
           </div>
           <%= cl_image_tag bike.user.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
           <h2>€<%= bike.price_per_day %></h2>
