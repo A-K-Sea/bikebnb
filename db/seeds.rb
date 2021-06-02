@@ -11,7 +11,7 @@ puts 'Start seeding users...'
 Bike.destroy_all
 User.destroy_all
 
-photo = URI.open('https://w7.pngwing.com/pngs/340/849/png-transparent-child-avatar-girl-woman-computer-icons-child-face-hand-people.png')
+photo = URI.open('https://static.vecteezy.com/system/resources/thumbnails/002/002/253/small_2x/beautiful-woman-wearing-sunglasses-avatar-character-icon-free-vector.jpg')
 user = User.create(email: "ari@teamind.com", password: "testing")
 user.photo.attach(io: photo, filename: 'ari.png', content_type: 'image/png')
 
@@ -40,7 +40,8 @@ bike = Bike.new(
   number_of_gears: 4,
   status: "available",
   user_id: 1
-  )
+)
+
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
@@ -53,11 +54,11 @@ bike = Bike.new(
   number_of_gears: 1,
   status: "available",
   user_id: 2
-  )
+)
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
-photo = URI.open('https://images.pexels.com/photos/5911709/pexels-photo-5911709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo = URI.open('https://humanforest.co.uk/media/pages/home/3811925271-1597619418/hf_ebike_01_simple-2.png')
 bike = Bike.new(
   brand: "BMX",
   price_per_day: 30,
@@ -66,7 +67,7 @@ bike = Bike.new(
   number_of_gears: 12,
   status: "available",
   user_id: 3
-  )
+)
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
@@ -79,7 +80,7 @@ bike = Bike.new(
   number_of_gears: 1,
   status: "available",
   user_id: 4
-  )
+)
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
@@ -92,7 +93,7 @@ bike = Bike.new(
   number_of_gears: 1,
   status: "available",
   user_id: 1
-  )
+)
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
@@ -105,7 +106,7 @@ bike = Bike.new(
   number_of_gears: 24,
   status: "available",
   user_id: 2
-  )
+)
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
@@ -118,7 +119,7 @@ bike = Bike.new(
   number_of_gears: 24,
   status: "available",
   user_id: 3
-  )
+)
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
 
