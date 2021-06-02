@@ -1,10 +1,21 @@
-<div class="container">
-  <h1>Add a new bike</h1>
+<header class="banner-new-bike">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="font-weight-light">xx</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-4">
+  <h3>Add your bike here (and earn money while sleeping)</h3>
 
   <%= simple_form_for(@bike) do |f| %>
   <%= f.input :photo, as: :file %>
   <%= f.input :price_per_day, input_html: { min: '0'} %>
   <%= f.input :brand %>
+  <%= f.input :address %>
   <%= f.input :category, :collection => Bike::CATEGORIES %>
   <%= f.input :brake_type, :collection => Bike::BRAKES %>
   <%= f.input :number_of_gears, input_html: { min: '0'} %>
