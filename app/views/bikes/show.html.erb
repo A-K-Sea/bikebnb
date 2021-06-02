@@ -2,24 +2,28 @@
   You are now in the <%= @bike.category %>, <%= @bike.brand %> page.
 </div>
 
-<div class="card-bike m-5">
-  <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
-  <!-- <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" /> -->
-  <div class="card-bike-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Category: <%= @bike.category %></p>
-      <p>Brand: <%= @bike.brand %></p>
-      <p>Status: <%= @bike.status %></p>
-      <p>Number of gears: <%= @bike.number_of_gears %></p>
+<div class="container">
+  <div class="card-bike m-5">
+    <%= cl_image_tag @bike.photo.key, crop: :fill %>
+    <!-- <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" /> -->
+    <div class="card-bike-infos">
+      <div>
+        <h2>A little description for this awesome bike:</h2>
+        <p>Category: <%= @bike.category %></p>
+        <p>Brand: <%= @bike.brand %></p>
+        <p>Status: <%= @bike.status %></p>
+        <p>Number of gears: <%= @bike.number_of_gears %></p>
+      </div>
+      <div>
+        <h2 class="card-bike-pricing"><%= @bike.price_per_day %>€ per day</h2>
+       <!--  <button type="button" class="btn btn-success m-3">Book bike</button> -->
+      </div>
+      <%= cl_image_tag @current_user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
+      <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-bike-user avatar-bordered" /> -->
     </div>
-    <div>
-      <h2 class="card-bike-pricing"><%= @bike.price_per_day %>€ per day</h2>
-      <button type="button" class="btn btn-success m-3">Book bike</button>
-    </div>
-
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-bike-user avatar-bordered" />
   </div>
 
-  <button type="button" class="btn btn-success m-3 text-dark"><%= link_to "Go back to index", bikes_path %></button>
+  <div class="m-5" >
+    <%= link_to "Back to index", "#", class: "btn btn-flat" %>
+  </div>
 </div>
