@@ -20,7 +20,7 @@
             <p>Brand: <%= bike.brand %></p>
             <p>Status: </p>
           </div>
-          <%= cl_image_tag @current_user.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
+          <%= cl_image_tag bike.user.photo.key, crop: :fill, class:"card-trip-user avatar-bordered" %>
           <h2>€<%= bike.price_per_day %></h2>
         </div>
       </div>
