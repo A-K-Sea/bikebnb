@@ -28,6 +28,10 @@ class BikesController < ApplicationController
       info_window: render_to_string(partial: "info_window", locals: { bike: @bike }),
       image_url: helpers.asset_url('bicycle.png')
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9c722a68803b795891cb83654372544e7cec24f5
   end
 
   def new
