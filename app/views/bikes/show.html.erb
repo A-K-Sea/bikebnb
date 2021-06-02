@@ -13,6 +13,7 @@
         <p>Brand: <%= @bike.brand %></p>
         <p>Status: <%= @bike.status %></p>
         <p>Number of gears: <%= @bike.number_of_gears %></p>
+        <p>Address of the bike: <%= @bike.address %></p>
       </div>
       <div>
         <h2 class="card-bike-pricing"><%= @bike.price_per_day %>€ per day</h2>
@@ -31,6 +32,6 @@
 <div class="container">
   <div id="map"
      style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
+     data-markers="<%= @marker.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

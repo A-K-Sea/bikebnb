@@ -17,4 +17,5 @@ class Bike < ApplicationRecord
   validates :number_of_gears, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_blank: true
   validates :status, inclusion: { in: AVAILABLE }, allow_blank: true
   validates :photo, presence: true
+  validates :address, presence: true
 end
