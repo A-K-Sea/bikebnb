@@ -20,6 +20,14 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
     authorize @bike
+
+    @marker =
+    {
+      lat: @bike.latitude,
+      lng: @bike.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { bike: @bike }),
+      image_url: helpers.asset_url('bicycle.png')
+    }
   end
 
   def new
@@ -42,6 +50,6 @@ class BikesController < ApplicationController
   private
 
   def bike_params
-    params.require(:bike).permit(:user_id, :category, :brand, :brake_type, :price_per_day, :status, :number_of_gears, :photo)
+    params.require(:bike).permit(:user_id, :category, :brand, :brake_type, :price_per_day, :status, :number_of_gears, :photo, :address)
   end
 end
