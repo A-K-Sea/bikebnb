@@ -39,7 +39,8 @@ bike = Bike.new(
   address: "Rue de Marseille, Lyon 7e Arrondissement, Auvergne-Rhône-Alpes, France",
   number_of_gears: 4,
   status: "available",
-  user_id: 1
+  user_id: 1,
+  description: "Almost new bike for rent!"
 )
 
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
@@ -53,7 +54,8 @@ bike = Bike.new(
   address: "Brusselsestraat 11, Maastricht, Netherlands",
   number_of_gears: 1,
   status: "available",
-  user_id: 2
+  user_id: 2,
+  description: "Reformed functional bike"
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
@@ -66,7 +68,8 @@ bike = Bike.new(
   address: "Scheveningen, Den Haag, Netherlands",
   number_of_gears: 12,
   status: "available",
-  user_id: 3
+  user_id: 3,
+  description: "Awesome bike for bikers experts"
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
@@ -79,7 +82,8 @@ bike = Bike.new(
   address: "Heidestrasse 36, Frankfurt",
   number_of_gears: 1,
   status: "available",
-  user_id: 4
+  user_id: 4,
+
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save
