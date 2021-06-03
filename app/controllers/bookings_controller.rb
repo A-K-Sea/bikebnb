@@ -1,5 +1,12 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = policy_scope(Booking)
+    @my_bikes = current_user.bikes
+    @owner = current_user.bikes.any?
+    # @bookings_as_renter = current_user.bookings
+  end
+
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
@@ -17,10 +24,6 @@ private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
-  end
-
-  def index
-    @bookings = policy_scope(Booking)
   end
 
 end
