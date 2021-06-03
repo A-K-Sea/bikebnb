@@ -3,18 +3,10 @@
 <nav class="navbar navbar-expand-sm navbar-static-top navbar-light navbar-lewagon">
 
     <div class="container">
-        <% if user_signed_in? %>
-          <%= link_to bikes_path, class: "navbar-brand" do %>
-          <div class="bicycle-logo">
-            <i class="fas fa-bicycle"></i>
-          </div>
-          <% end %>
-        <% else %>
-          <%= link_to root_path, class: "navbar-brand" do %>
-          <div class="bicycle-logo">
-            <i class="fas fa-bicycle"></i>
-          </div>
-          <% end %>
+        <%= link_to root_path, class: "navbar-brand" do %>
+        <div class="bicycle-logo">
+          <i class="fas fa-bicycle"></i>
+        </div>
         <% end %>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
