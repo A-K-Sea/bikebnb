@@ -5,7 +5,11 @@ class BikesController < ApplicationController
   end
 
   def index
-    @bikes = policy_scope(Bike).order(created_at: :desc)
+    if params[:query].present?
+      @bikes = policy_scope(Bike).near(params[:query], 10)
+    else
+      @bikes = policy_scope(Bike).order(created_at: :desc)
+    end
 
     @markers = @bikes.geocoded.map do |bike|
       {
@@ -15,6 +19,7 @@ class BikesController < ApplicationController
         image_url: helpers.asset_url('bicycle.png')
       }
     end
+
   end
 
   def show
