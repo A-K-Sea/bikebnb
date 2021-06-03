@@ -13,7 +13,6 @@
 
   <%= simple_form_for(@bike) do |f| %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :description, label: "Describe your bike" %>
   <%= f.input :price_per_day, label: "Price per day (EUR)", input_html: { min: '0'} %>
   <%= f.input :brand %>
   <%= f.input :address %>
