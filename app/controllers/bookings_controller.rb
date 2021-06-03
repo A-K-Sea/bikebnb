@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+<<<<<<< HEAD
   belongs_to :user
   belongs_to :bike
 
@@ -14,6 +15,11 @@ private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+=======
+
+  def index
+    @bookings = policy_scope(Booking)
+>>>>>>> c5eaa6ba08d1adbacd12df3cf3601e89a329ba4c
   end
 
 end
