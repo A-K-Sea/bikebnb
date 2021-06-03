@@ -12,14 +12,13 @@
 </head>
 
 <body>
-<div class=row>
+<%# <div class="row"> %>
   <div class="dashboard-container">
 
     <div class="bikes-container">
 
-      <div class="row">
         <div class="user_bikes">
-          <div class="column">
+          <div class="col-6">
             <%# This will contain the list of the logged-in user's bikes %>
             <h3>Your bikes:</h3>
               <% @my_bikes.each do |bike| %>
@@ -49,11 +48,10 @@
 
           </div>
         </div>
-      </div>
 
       <div class="booking-container">
         <div class="user_bookings">
-          <div class="column">
+          <div class="col-6">
            <%# This will contain the list of booking made by the logged-in user %>
             <h3>Your bookings:</h3>
               <% @my_bikes.each do |bike| %>
@@ -86,7 +84,7 @@
     </div>
 
   </div>
-</div>
+<%# </div> %>
 
 </body>
 

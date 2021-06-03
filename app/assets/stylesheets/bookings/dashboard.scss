@@ -21,9 +21,11 @@
   display: flex;
   flex-direction: row-reverse;
   align-self: flex-start;
-  //max-width: 50%;
+  max-width: 50%;
 }
 
-// .user_bookings {
-    
-// }
+ .user_bookings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;    
+}
