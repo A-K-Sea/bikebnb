@@ -1,0 +1,25 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.bikes-container {
+  background-color: cadetblue;
+  display: flex;
+}
+
+.user_bikes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bookings-container {
+  background-color: darkolivegreen;
+  display: flex;
+}
+
+// .user_bookings {
+
+// }
