@@ -27,6 +27,12 @@
     </div>
   </div>
 
+  <%= simple_form_for [@bike, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Book now", class: "btn btn-success" %>
+  <% end %>
+
   <div class="container mt-5">
     <div id="map"
        style="width: 100%; height: 600px;"
