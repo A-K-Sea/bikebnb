@@ -21,6 +21,6 @@
   <%= f.input :brake_type, :collection => Bike::BRAKES %>
   <%= f.input :number_of_gears, input_html: { min: '0'} %>
   <%= f.input :status, :collection => Bike::AVAILABLE, as: :radio_buttons, :checked => Bike::AVAILABLE.first %>
-  <%= f.button :submit, value: "Add Bike", class: "btn btn-primary" %>
+  <%= f.button :submit, value: "Add Bike", class: "btn-green-filled" %>
   <% end %>
 </div>

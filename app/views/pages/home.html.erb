@@ -14,14 +14,14 @@
         <p class="lead">Rent or lease <strong>bikes</strong> in just 3 clicks</p>
 
           <div>
-             <%= form_tag bikes_path, method: :get do %>
+             <%= form_tag bikes_path, id: "search-bar", method: :get do %>
               <%= text_field_tag :query,
                   params[:query],
                   class: "form-control",
                   placeholder: "Type a city to start your search",
                   id: "bike_address"
                    %>
-                  <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+                  <%= submit_tag "Search", class: "btn btn-green mt-3" %>
              <% end %>
          <!--  </div>
         <% if user_signed_in? %>
