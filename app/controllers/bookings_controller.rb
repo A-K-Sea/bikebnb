@@ -8,13 +8,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(start_date: Date.parse(booking_params[:start_date]), end_date: Date.parse(booking_params[:end_date]))
     authorize @booking
     @bike = Bike.find(params[:bike_id])
-    authorize @bike
+    @booking.user = current_user
+
     @booking.bike = @bike
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bikes_path
     else
       redirect_to bike_path(@bike)
     end
