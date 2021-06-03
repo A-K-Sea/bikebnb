@@ -19,9 +19,11 @@ require("channels")
 import { loadDynamicBannerText } from '../plugins/typed';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initMapbox();
   initAutocomplete();
+  initFlatpickr();
 });
