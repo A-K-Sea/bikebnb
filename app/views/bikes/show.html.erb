@@ -1,12 +1,13 @@
 
 <div class="content">
   <div class="container">
+    <h2>A little description for this awesome bike</h2>
     <div class="card-bike m-5">
       <%= cl_image_tag @bike.photo.key, crop: :fill %>
       <!-- <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" /> -->
       <div class="card-bike-infos">
         <div>
-          <h2>A little description for this awesome bike</h2>
+          <h2><%= @bike.description %></h2>
           <p> <i class="fas fa-bicycle"></i> <%= @bike.category %></p>
           <p><i class="fas fa-tag"></i> Brand: <%= @bike.brand %></p>
           <p><i class="fas fa-circle" style="color: #99C2A2; font-size: 12px"></i> <%= @bike.status %></p>
@@ -35,3 +36,4 @@
     </div>
   </div>
 </div>
+
