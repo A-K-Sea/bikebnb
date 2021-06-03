@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'pundit'
 gem 'geocoder'
+gem 'simple-form-datepicker', '~> 0.1.3'
 
 # add dotenv to save API keys
 gem 'dotenv-rails', groups: [:development, :test]
