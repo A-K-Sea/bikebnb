@@ -39,3 +39,15 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-green {
+  border: 3px solid #99C2A2;
+  color: #99C2A2;
+  background: transparent;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 10px 20px;
+  &:hover {
+    color: white;
+  }
+}
