@@ -5,9 +5,7 @@
 }
 
 .card-bike {
-
-  width: 500px;
-
+  width: 1000px;
   flex-grow: 1;
   overflow: hidden;
   background: white;
@@ -15,10 +13,8 @@
 }
 
 .card-bike > img {
-  height: 200px;
-
-  width: 400px;
-
+  height: 400px;
+  width: 800px;
   object-fit: cover;
 }
 
