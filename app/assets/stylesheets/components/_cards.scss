@@ -22,6 +22,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  flex-grow: 1;
 }
 
 .card-trip {
@@ -67,3 +68,20 @@ h2 {
   width: 50px;
   height: 50px;
 }
+
+.all-bikes {
+  padding-left: 0;
+}
+
+@media(max-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
