@@ -1,12 +1,13 @@
 .dashboard-container {
   display: flex;
-  flex-direction: column;
+ // flex-direction: column;
 
 }
 
 .bikes-container {
-  background-color: cadetblue;
+  background-color: #5f9ea0;
   display: flex;
+  max-width: 50%;
 }
 
 .user_bikes {
@@ -18,8 +19,11 @@
 .bookings-container {
   background-color: darkolivegreen;
   display: flex;
+  flex-direction: row-reverse;
+  align-self: flex-start;
+  //max-width: 50%;
 }
 
 // .user_bookings {
-
+    
 // }

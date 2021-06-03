@@ -21,6 +21,9 @@ private
 
   def index
     @bookings = policy_scope(Booking)
+    @my_bikes = current_user.bikes
+    @owner = current_user.bikes.any?
+    # @bookings_as_renter = current_user.bookings
   end
 
 end
