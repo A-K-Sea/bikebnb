@@ -8,6 +8,14 @@
 }
 
 #map {
+  display: grid;
   height: 100vh;
-  box-shadow: 0 0 0 5px rgba(21, 61, 3, 0.911);
+  position: sticky;
+  top: 0;
+}
+
+@media(max-width: 1200px) {
+  #map {
+    display: none;
+  }
 }
