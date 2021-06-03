@@ -51,3 +51,16 @@
     color: white;
   }
 }
+
+
+.btn-green-filled {
+  border: 3px solid #99C2A2;
+  background: #99C2A2;
+  color: white;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 10px 20px;
+  &:hover {
+    color: white;
+  }
+}
