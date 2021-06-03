@@ -1,4 +1,12 @@
 
+<div class="container">
+  <%= simple_form_for [@bike, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Book now", class: "btn btn-success" %>
+  <% end %>
+</div>
+
 <div class="container d-flex">
   <div class="card-bike m-5">
    <div class="card-bike-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @bike.photo.key, height: 300, crop: :fill %>')">
