@@ -44,7 +44,7 @@ bike = Bike.new(
 )
 
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 photo = URI.open('https://images.pexels.com/photos/5445300/pexels-photo-5445300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 bike = Bike.new(
@@ -58,7 +58,7 @@ bike = Bike.new(
   description: "Reformed functional bike"
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 photo = URI.open('https://humanforest.co.uk/media/pages/home/3811925271-1597619418/hf_ebike_01_simple-2.png')
 bike = Bike.new(
@@ -72,7 +72,7 @@ bike = Bike.new(
   description: "Awesome bike for bikers experts"
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 photo = URI.open('https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 bike = Bike.new(
@@ -86,7 +86,7 @@ bike = Bike.new(
 
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 photo = URI.open('https://cremecycles.com/images/glowne/16.jpg')
 bike = Bike.new(
@@ -99,7 +99,7 @@ bike = Bike.new(
   user_id: 1
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 photo = URI.open('https://polebicycles.com/wp-content/uploads/2021/03/pole-taival-tr-late-2020-ds-2560x1707.jpg')
 bike = Bike.new(
@@ -112,7 +112,7 @@ bike = Bike.new(
   user_id: 2
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 photo = URI.open('https://cdn.shopify.com/s/files/1/1245/1481/products/2_DIAMOND_BLACK_1_1024x1024.jpg?v=1597774901')
 bike = Bike.new(
@@ -125,7 +125,7 @@ bike = Bike.new(
   user_id: 3
 )
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
-bike.save
+bike.save!
 
 
 puts "...done seeding bikes!"
