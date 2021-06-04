@@ -14,11 +14,12 @@
     <div class="row">
       <div class="col-md-6 col-sm-12 no-gutters p-0">
         <div class="bikes-container">
+            <br><h3>Your bikes for rent</h3><br>
 
           <div class="user_bikes">
 
               <%# This will contain the list of the logged-in user's bikes %>
-              <br><h3>Your bikes for rent</h3><br>
+
                 <% @bookings_as_owner.each do |booking| %>
                 <div class="card-booking mb-4">
                   <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
@@ -57,10 +58,12 @@
       </div>
       <div class="col-md-6 col-sm-12 no-gutters p-0">
         <div class="bookings-container">
+          <br><h3>Your bookings</h3><br>
+
             <div class="user_bookings">
 
               <%# This will contain the list of booking made by the logged-in user %>
-                <br><h3>Your bookings</h3><br>
+                
                   <% @bookings_as_renter.each do |booking| %>
 
                 <div class="card-bike-dash m-5">
