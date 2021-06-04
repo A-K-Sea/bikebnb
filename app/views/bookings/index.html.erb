@@ -21,21 +21,21 @@
        </div>
        <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
        <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
-
+       <%= cl_image_tag booking.user.photo.key, crop: :fill, class:"card-trip-user avatar-bordered", id: "booking-avatar" %>
 
        <div class="d-flex justify-content-end mt-1" id="booking-buttons">
-          <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
-          <div class="btn btn-accept mr-1">Accept</div>
-          <% end %>
-          <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
-          <div class="btn btn-reject">Reject</div>
-          <% end %>
-        </div>
+        <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
+        <div class="btn btn-accept mr-1">Accept</div>
+        <% end %>
+        <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
+        <div class="btn btn-reject">Reject</div>
+        <% end %>
       </div>
     </div>
-    <% end %>
-
   </div>
+  <% end %>
+
+</div>
 
 <div class="bookings-container">
   <div class="bookings-header">
@@ -57,9 +57,9 @@
      </div>
      <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
      <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
-
+     <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-trip-user avatar-bordered", id: "booking-avatar" %>
    </div>
  </div>
-  </div>
-  <% end %>
+ <% end %>
+</div>
 </div>
