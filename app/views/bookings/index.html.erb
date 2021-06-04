@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="dashboard-container container-fluid">
+  <div class="container main-container">
     <div class="row">
       <div class="col-md-6 col-sm-12 no-gutters p-0">
         <div class="bikes-container">
@@ -20,8 +20,16 @@
               <%# This will contain the list of the logged-in user's bikes %>
               <br><h3>Your bikes for rent</h3><br>
                 <% @bookings_as_owner.each do |booking| %>
+                <div class="card-booking mb-4">
+                  <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
+                  <div class="card-booking-infos text-align-left">
+                    <h2><%= booking.total_price %>€</h2>
+                    <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
+                    <p>Location: <%= booking.bike.address %></p>
+                  </div>
+                </div>
 
-                <div class="card-bike-dash m-5">
+                <!-- <div class="card-bike-dash m-5">
                   <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
                   <div class="card-bike-infos">
 
@@ -40,7 +48,7 @@
 
                     <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
                   </div>
-                </div>
+                </div> -->
 
                 <% end %>
 
