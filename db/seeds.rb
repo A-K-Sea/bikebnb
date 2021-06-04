@@ -60,7 +60,7 @@ bike = Bike.new(
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save!
 
-photo = URI.open('https://humanforest.co.uk/media/pages/home/3811925271-1597619418/hf_ebike_01_simple-2.png')
+photo = URI.open('https://upload.wikimedia.org/wikipedia/commons/b/bc/Dutch_bicycle.jpg')
 bike = Bike.new(
   brand: "BMX",
   price_per_day: 30,
