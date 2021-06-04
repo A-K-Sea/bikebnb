@@ -19,30 +19,30 @@
 
               <%# This will contain the list of the logged-in user's bikes %>
               <br><h3>Your bikes for rent</h3><br>
-                <% @bookings_as_owner.each do |bike| %>
+                <% @bookings_as_owner.each do |booking| %>
 
                 <div class="card-bike-dash m-5">
-                  <%= cl_image_tag bike.photo.key, crop: :fill %>
+                  <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
                   <div class="card-bike-infos">
 
                     <div>
                       <h2>A little description for this awesome bike:</h2>
-                      <p>Category: <%= bike.category %></p>
-                      <p>Brand: <%= bike.brand %></p>
-                      <p>Status: <%= bike.status %></p>
-                      <p>Number of gears: <%= bike.number_of_gears %></p>
-                      <p>Address of the bike: <%= bike.address %></p>
+                      <p>Category: <%= booking.bike.category %></p>
+                      <p>Brand: <%= booking.bike.brand %></p>
+                      <p>Status: <%= booking.bike.status %></p>
+                      <p>Number of gears: <%= booking.bike.number_of_gears %></p>
+                      <p>Address of the bike: <%= booking.bike.address %></p>
                     </div>
 
                     <div>
-                      <h2 class="card-bike-pricing"><%= bike.price_per_day %>€ per day</h2>
+                      <h2 class="card-bike-pricing"><%= booking.bike.price_per_day %>€ per day</h2>
                     </div>
 
-                    <%= cl_image_tag bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
+                    <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
                   </div>
                 </div>
 
-                <%end%>
+                <% end %>
 
           </div>
         </div>
@@ -53,26 +53,26 @@
 
               <%# This will contain the list of booking made by the logged-in user %>
                 <br><h3>Your bookings</h3><br>
-                  <% @bookings_as_renter.each do |bike| %>
+                  <% @bookings_as_renter.each do |booking| %>
 
                 <div class="card-bike-dash m-5">
-                  <%= cl_image_tag bike.photo.key, crop: :fill %>
+                  <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
                   <div class="card-bike-infos">
 
                     <div>
                       <h2>A little description for this awesome bike:</h2>
-                      <p>Category: <%= bike.category %></p>
-                      <p>Brand: <%= bike.brand %></p>
-                      <p>Status: <%= bike.status %></p>
-                      <p>Number of gears: <%= bike.number_of_gears %></p>
-                      <p>Address of the bike: <%= bike.address %></p>
+                      <p>Category: <%= booking.bike.category %></p>
+                      <p>Brand: <%= booking.bike.brand %></p>
+                      <p>Status: <%= booking.bike.status %></p>
+                      <p>Number of gears: <%= booking.bike.number_of_gears %></p>
+                      <p>Address of the bike: <%= booking.bike.address %></p>
                     </div>
 
                     <div>
-                      <h2 class="card-bike-pricing"><%= bike.price_per_day %>€ per day</h2>
+                      <h2 class="card-bike-pricing"><%= booking.bike.price_per_day %>€ per day</h2>
                     </div>
 
-                    <%= cl_image_tag bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
+                    <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
                   </div>
                 </div>
                   <%end%>
