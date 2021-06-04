@@ -1,8 +1,6 @@
-.dashboard-container {
-}
-
 .bikes-container {
-  background-color: #F4F4F4;;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .user_bikes {
@@ -10,10 +8,15 @@
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  background-color: #ECF6E6;
+  padding: 20px;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+
 }
 
 .bookings-container {
-  background-color: #F4F4F4;;
+  text-align: center;
+  margin-left: 10px;
 }
 
  .user_bookings {
@@ -21,6 +24,8 @@
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  background-color: #ECF6E6;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2);
 }
 
 .card-bike-dash {

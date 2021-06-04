@@ -14,18 +14,39 @@
     <div class="row">
       <div class="col-md-6 col-sm-12 no-gutters p-0">
         <div class="bikes-container">
+            <br><h3>Your bikes for rent</h3><br>
 
           <div class="user_bikes">
 
               <%# This will contain the list of the logged-in user's bikes %>
-              <br><h3>Your bikes for rent</h3><br>
+
                 <% @bookings_as_owner.each do |booking| %>
                 <div class="card-booking mb-4">
                   <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
                   <div class="card-booking-infos text-align-left">
-                    <h2><%= booking.total_price %>€</h2>
+                    <div class="d-flex justify-content-between">
+                       <h2>€<%= booking.total_price %></h2>
+                       <% if booking.status == "accepted" %>
+                         <i class="fas fa-circle" style="color: #99C2A2; font-size: 20px"></i>
+                       <% elsif booking.status == "pending" %>
+                         <i class="fas fa-circle" style="color: orange; font-size: 20px"></i>
+                       <% else %>
+                         <i class="fas fa-circle" style="color: #ca3c25; font-size: 20px"></i>
+                       <% end %>
+                    </div>
                     <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
-                    <p>Location: <%= booking.bike.address %></p>
+                    <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
+                    <!-- <p>Booking status: <%= booking.status %></p> -->
+
+                    <div class="d-flex justify-content-end mt-1">
+                      <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
+                        <div class="btn btn-accept mr-1">Accept</div>
+                      <% end %>
+                      <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
+                        <div class="btn btn-reject">Reject</div>
+                      <% end %>
+
+                    </div>
                   </div>
                 </div>
 
@@ -57,10 +78,12 @@
       </div>
       <div class="col-md-6 col-sm-12 no-gutters p-0">
         <div class="bookings-container">
+          <br><h3>Your bookings</h3><br>
+
             <div class="user_bookings">
 
               <%# This will contain the list of booking made by the logged-in user %>
-                <br><h3>Your bookings</h3><br>
+                
                   <% @bookings_as_renter.each do |booking| %>
 
                 <div class="card-bike-dash m-5">

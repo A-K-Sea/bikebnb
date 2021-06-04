@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @bike = Bike.find(params[:bike_id])
     @booking.user = current_user
-
+    @booking.status = "pending"
     @booking.total_price = (Date.parse(booking_params[:end_date]) - Date.parse(booking_params[:start_date])).to_i * @bike.price_per_day
 
     @booking.bike = @bike
@@ -28,6 +28,23 @@ class BookingsController < ApplicationController
     else
       redirect_to bike_path(@bike)
     end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+
+    if params[:query] == "accept"
+      @booking.status = "accepted"
+    end
+
+    if params[:query] == "reject"
+      @booking.status = "rejected"
+    end
+
+    @booking.save!
+
+    redirect_to bookings_path
   end
 
 private

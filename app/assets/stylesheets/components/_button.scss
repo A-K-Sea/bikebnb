@@ -60,6 +60,7 @@
   border-radius: 30px;
   font-size: 20px;
   padding: 10px 20px;
+  margin: 20px;
   &:hover {
     color: white;
   }
@@ -74,5 +75,28 @@
   padding: 10px 20px;
   &:hover {
     color: #99C2A2;
+  }
+}
+
+.btn-accept {
+  border: 1px solid #99C2A2;
+  color: #99C2A2;
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 2px 10px;
+  &:hover {
+    color: #99C2A2;
+  }
+}
+
+
+.btn-reject {
+  border: 1px solid #ca3c25;
+  color: #ca3c25;
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 2px 10px;
+  &:hover {
+    color: #ca3c25;
   }
 }
