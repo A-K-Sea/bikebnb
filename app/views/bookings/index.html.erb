@@ -1,133 +1,87 @@
 <!doctype html>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
 
-  <title>BikeBNB Dashboard</title>
-  <meta name="description" content="BikeBNB Dashboard">
+    <title>BikeBNB Dashboard</title>
+    <meta name="description" content="BikeBNB Dashboard">
 
-</head>
+  </head>
 
-<body>
-  <div class="container main-container">
-    <div class="row">
-      <div class="col-md-6 col-sm-12 no-gutters p-0">
-        <div class="bikes-container">
+  <body>
+    <div class="container main-container d-flex">
+          <div class="bookings-container">
+
             <br><h3>Your bikes for rent</h3><br>
+            <% @bookings_as_owner.each do |booking| %>
+            <div class="card-booking mb-4">
+              <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
+              <div class="card-booking-infos text-align-left">
+                <div class="d-flex justify-content-between">
+                 <h2>€<%= booking.total_price %></h2>
+                 <% if booking.status == "accepted" %>
+                 <i class="fas fa-circle" id="status-bubble" style="color: #99C2A2; font-size: 20px"></i>
+                 <% elsif booking.status == "pending" %>
+                 <i class="fas fa-circle" id="status-bubble" style="color: orange; font-size: 20px"></i>
+                 <% else %>
+                 <i class="fas fa-circle" id="status-bubble" style="color: #ca3c25; font-size: 20px"></i>
+                 <% end %>
+               </div>
+               <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
+               <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
 
-          <div class="user_bikes">
-
-              <%# This will contain the list of the logged-in user's bikes %>
-
-                <% @bookings_as_owner.each do |booking| %>
-                <div class="card-booking mb-4">
-                  <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
-                  <div class="card-booking-infos text-align-left">
-                    <div class="d-flex justify-content-between">
-                       <h2>€<%= booking.total_price %></h2>
-                       <% if booking.status == "accepted" %>
-                         <i class="fas fa-circle" style="color: #99C2A2; font-size: 20px"></i>
-                       <% elsif booking.status == "pending" %>
-                         <i class="fas fa-circle" style="color: orange; font-size: 20px"></i>
-                       <% else %>
-                         <i class="fas fa-circle" style="color: #ca3c25; font-size: 20px"></i>
-                       <% end %>
-                    </div>
-                    <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
-                    <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
-                    <!-- <p>Booking status: <%= booking.status %></p> -->
-
-                    <div class="d-flex justify-content-end mt-1">
-                      <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
-                        <div class="btn btn-accept mr-1">Accept</div>
-                      <% end %>
-                      <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
-                        <div class="btn btn-reject">Reject</div>
-                      <% end %>
-
-                    </div>
-                  </div>
-                </div>
-
-                <!-- <div class="card-bike-dash m-5">
-                  <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
-                  <div class="card-bike-infos">
-
-                    <div>
-                      <h2>A little description for this awesome bike:</h2>
-                      <p>Category: <%= booking.bike.category %></p>
-                      <p>Brand: <%= booking.bike.brand %></p>
-                      <p>Status: <%= booking.bike.status %></p>
-                      <p>Number of gears: <%= booking.bike.number_of_gears %></p>
-                      <p>Address of the bike: <%= booking.bike.address %></p>
-                    </div>
-
-                    <div>
-                      <h2 class="card-bike-pricing"><%= booking.bike.price_per_day %>€ per day</h2>
-                    </div>
-
-                    <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
-                  </div>
-                </div> -->
-
+               <div class="d-flex justify-content-end mt-1">
+                <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
+                <div class="btn btn-accept mr-1">Accept</div>
+                <% end %>
+                <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
+                <div class="btn btn-reject">Reject</div>
                 <% end %>
 
+              </div>
+            </div>
           </div>
+          <% end %>
+
         </div>
-      </div>
-      <div class="col-md-6 col-sm-12 no-gutters p-0">
+
         <div class="bookings-container">
-          <br><h3>Your bookings</h3><br>
 
-            <div class="user_bookings">
+          <br><h3>Your upcoming bookings</h3><br>
+          <% @bookings_as_renter.each do |booking| %>
+          <div class="card-booking mb-4">
+            <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
+            <div class="card-booking-infos text-align-left">
+              <div class="d-flex justify-content-between">
+               <h2>€<%= booking.total_price %></h2>
+               <% if booking.status == "accepted" %>
+               <i class="fas fa-circle" id="status-bubble" style="color: #99C2A2; font-size: 20px"></i>
+               <% elsif booking.status == "pending" %>
+               <i class="fas fa-circle" id="status-bubble" style="color: orange; font-size: 20px"></i>
+               <% else %>
+               <i class="fas fa-circle" id="status-bubble" style="color: #ca3c25; font-size: 20px"></i>
+               <% end %>
+             </div>
+             <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
+             <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
 
-              <%# This will contain the list of booking made by the logged-in user %>
-                
-                  <% @bookings_as_renter.each do |booking| %>
-
-                <div class="card-bike-dash m-5">
-                  <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
-                  <div class="card-bike-infos">
-
-                    <div>
-                      <h2>A little description for this awesome bike:</h2>
-                      <p>Category: <%= booking.bike.category %></p>
-                      <p>Brand: <%= booking.bike.brand %></p>
-                      <p>Status: <%= booking.bike.status %></p>
-                      <p>Number of gears: <%= booking.bike.number_of_gears %></p>
-                      <p>Address of the bike: <%= booking.bike.address %></p>
-                    </div>
-
-                    <div>
-                      <h2 class="card-bike-pricing"><%= booking.bike.price_per_day %>€ per day</h2>
-                    </div>
-
-                    <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
-                  </div>
-                </div>
-                  <%end%>
+             <div class="d-flex justify-content-end mt-1">
+              <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
+              <div class="btn btn-accept mr-1">Accept</div>
+              <% end %>
+              <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
+              <div class="btn btn-reject">Reject</div>
+              <% end %>
 
             </div>
+          </div>
         </div>
+        <% end %>
+
       </div>
-
-    </div>
-
-  </div>
+</div>
 
 </body>
 
 </html>
-
-
-<!-- <h1>bookings as renter</h1>
-<% @bookings_as_renter.each do |booking| %>
-<h2><%= booking.total_price %></h2>
-<% end %>
-
-<h1>bookings as owner</h1>
-<% @bookings_as_owner.each do |booking| %>
-<h2><%= booking.start_date %></h2>
-<% end %>
- -->
