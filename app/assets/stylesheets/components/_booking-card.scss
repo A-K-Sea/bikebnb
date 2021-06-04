@@ -6,6 +6,7 @@
   display: flex;
   align-items: left;
   border-radius: 10px;
+  position: relative;
 }
 
 .card-booking img {
@@ -31,4 +32,26 @@
 .card-booking .card-booking-infos {
   padding: 16px;
   text-align: left;
+}
+
+#status-bubble {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.bookings-header {
+  margin: 30px 0px;
+  text-align: left;
+  border-bottom: 3px solid #99C2A2;
+  h3 {
+    font-size: 25px;
+    color: #7A918D;
+  }
+}
+
+#booking-buttons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
