@@ -24,9 +24,29 @@
                 <div class="card-booking mb-4">
                   <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
                   <div class="card-booking-infos text-align-left">
-                    <h2><%= booking.total_price %>€</h2>
+                    <div class="d-flex justify-content-between">
+                       <h2>€<%= booking.total_price %></h2>
+                       <% if booking.status == "accepted" %>
+                         <i class="fas fa-circle" style="color: #99C2A2; font-size: 20px"></i>
+                       <% elsif booking.status == "pending" %>
+                         <i class="fas fa-circle" style="color: orange; font-size: 20px"></i>
+                       <% else %>
+                         <i class="fas fa-circle" style="color: #ca3c25; font-size: 20px"></i>
+                       <% end %>
+                    </div>
                     <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
-                    <p>Location: <%= booking.bike.address %></p>
+                    <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
+                    <!-- <p>Booking status: <%= booking.status %></p> -->
+
+                    <div class="d-flex justify-content-end mt-1">
+                      <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
+                        <div class="btn btn-accept mr-1">Accept</div>
+                      <% end %>
+                      <%= link_to booking_path(booking, query: "reject"), method: :patch do %>
+                        <div class="btn btn-reject">Reject</div>
+                      <% end %>
+
+                    </div>
                   </div>
                 </div>
 

@@ -74,7 +74,7 @@ bike = Bike.new(
 bike.photo.attach(io: photo, filename: 'bike.png', content_type: 'image/png')
 bike.save!
 
-photo = URI.open('https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo = URI.open('https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmljeWNsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80')
 bike = Bike.new(
   brand: "Touring Bike",
   price_per_day: 10,
