@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
+    @list_bookings = Booking.all
+
     @bookings = policy_scope(Booking)
     @my_bikes = current_user.bikes
     @owner = current_user.bikes.any?
@@ -34,7 +36,7 @@ private
     # return the (array?) of bookings for a particular user
     # find by user id?
     # @booking.user = current_user
-    Booking.find(params[:user_id])
+    current_user.bookings = Booking.find(params[:user_id])
   end
 
 end
