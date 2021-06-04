@@ -19,7 +19,6 @@ class BikesController < ApplicationController
         image_url: helpers.asset_url('bicycle.png')
       }
     end
-
   end
 
   def show
