@@ -4,7 +4,11 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
     @my_bikes = current_user.bikes
     @owner = current_user.bikes.any?
-    # @bookings_as_renter = current_user.bookings
+    @bookings_as_renter = current_user.bookings
+    if @owner
+      @my_bikes = current_user.bikes
+      @bookings_as_owner = Booking.where(bike_id: @my_bikes.pluck(:id))
+     end
   end
 
   def create
@@ -24,6 +28,13 @@ private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def bookings
+    # return the (array?) of bookings for a particular user
+    # find by user id?
+    # @booking.user = current_user
+    Booking.find(params[:user_id])
   end
 
 end
