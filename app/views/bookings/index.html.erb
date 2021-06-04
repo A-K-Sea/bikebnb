@@ -1,4 +1,96 @@
-<h1>bookings as renter</h1>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>BikeBNB Dashboard</title>
+  <meta name="description" content="BikeBNB Dashboard">
+
+</head>
+
+<body>
+  <div class="dashboard-container container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 no-gutters p-0">
+        <div class="bikes-container">
+
+          <div class="user_bikes">
+
+              <%# This will contain the list of the logged-in user's bikes %>
+              <br><h3>Your bikes for rent</h3><br>
+                <% @bookings_as_owner.each do |bike| %>
+
+                <div class="card-bike-dash m-5">
+                  <%= cl_image_tag bike.photo.key, crop: :fill %>
+                  <div class="card-bike-infos">
+
+                    <div>
+                      <h2>A little description for this awesome bike:</h2>
+                      <p>Category: <%= bike.category %></p>
+                      <p>Brand: <%= bike.brand %></p>
+                      <p>Status: <%= bike.status %></p>
+                      <p>Number of gears: <%= bike.number_of_gears %></p>
+                      <p>Address of the bike: <%= bike.address %></p>
+                    </div>
+
+                    <div>
+                      <h2 class="card-bike-pricing"><%= bike.price_per_day %>€ per day</h2>
+                    </div>
+
+                    <%= cl_image_tag bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
+                  </div>
+                </div>
+
+                <%end%>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 no-gutters p-0">
+        <div class="bookings-container">
+            <div class="user_bookings">
+
+              <%# This will contain the list of booking made by the logged-in user %>
+                <br><h3>Your bookings</h3><br>
+                  <% @bookings_as_renter.each do |bike| %>
+
+                <div class="card-bike-dash m-5">
+                  <%= cl_image_tag bike.photo.key, crop: :fill %>
+                  <div class="card-bike-infos">
+
+                    <div>
+                      <h2>A little description for this awesome bike:</h2>
+                      <p>Category: <%= bike.category %></p>
+                      <p>Brand: <%= bike.brand %></p>
+                      <p>Status: <%= bike.status %></p>
+                      <p>Number of gears: <%= bike.number_of_gears %></p>
+                      <p>Address of the bike: <%= bike.address %></p>
+                    </div>
+
+                    <div>
+                      <h2 class="card-bike-pricing"><%= bike.price_per_day %>€ per day</h2>
+                    </div>
+
+                    <%= cl_image_tag bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
+                  </div>
+                </div>
+                  <%end%>
+
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+
+<!-- <h1>bookings as renter</h1>
 <% @bookings_as_renter.each do |booking| %>
 <h2><%= booking.total_price %></h2>
 <% end %>
@@ -7,3 +99,4 @@
 <% @bookings_as_owner.each do |booking| %>
 <h2><%= booking.start_date %></h2>
 <% end %>
+ -->
