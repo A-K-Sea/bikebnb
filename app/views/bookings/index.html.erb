@@ -2,7 +2,9 @@
 <div class="container d-flex">
   <div class="bookings-container">
 
-    <br><h3>Your bikes for rent</h3><br>
+    <div class="bookings-header">
+      <h3>Your bikes for rent <i class="fas fa-user-alt"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-bicycle"></i></h3>
+    </div>
     <% @bookings_as_owner.each do |booking| %>
     <div class="card-booking mb-4">
       <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
@@ -20,7 +22,8 @@
        <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
        <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
 
-       <div class="d-flex justify-content-end mt-1">
+
+       <div class="d-flex justify-content-end mt-1" id="booking-buttons">
           <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
           <div class="btn btn-accept mr-1">Accept</div>
           <% end %>
@@ -35,8 +38,9 @@
   </div>
 
 <div class="bookings-container">
-
-  <br><h3>Your upcoming bookings</h3><br>
+  <div class="bookings-header">
+    <h3>Your upcoming bookings <i class="fas fa-bicycle"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-user-alt"></i></h3>
+  </div>
   <% @bookings_as_renter.each do |booking| %>
   <div class="card-booking mb-4">
     <%= cl_image_tag booking.bike.photo.key, crop: :fill %>
