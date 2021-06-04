@@ -18,8 +18,8 @@
           <div class="user_bikes">
 
               <%# This will contain the list of the logged-in user's bikes %>
-              <h3>Your bikes:</h3>
-                <% @my_bikes.each do |bike| %>
+              <br><h3>Your bikes for rent</h3><br>
+                <% @bookings_as_owner.each do |bike| %>
 
                 <div class="card-bike-dash m-5">
                   <%= cl_image_tag bike.photo.key, crop: :fill %>
@@ -52,8 +52,8 @@
             <div class="user_bookings">
 
               <%# This will contain the list of booking made by the logged-in user %>
-                <h3>Your bookings:</h3>
-                  <% @my_bikes.each do |bike| %>
+                <br><h3>Your bookings</h3><br>
+                  <% @bookings_as_renter.each do |bike| %>
             
                 <div class="card-bike-dash m-5">
                   <%= cl_image_tag bike.photo.key, crop: :fill %>
