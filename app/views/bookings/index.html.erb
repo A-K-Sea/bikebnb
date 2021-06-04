@@ -22,6 +22,7 @@
        <h2>Dates: <%= booking.start_date %> - <%= booking.end_date %></h2>
        <p><i class="fas fa-map-marked-alt"></i> <%= booking.bike.address %></p>
 
+
        <div class="d-flex justify-content-end mt-1" id="booking-buttons">
           <%= link_to booking_path(booking, query: "accept"), method: :patch do %>
           <div class="btn btn-accept mr-1">Accept</div>
