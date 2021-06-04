@@ -68,7 +68,7 @@
                   <div class="card-bike-infos">
 
                     <div>
-                      <h2>A little description for this awesome bike:</h2>
+                      <h2>A little description for this awesome bike</h2>
                       <p>Category: <%= booking.bike.category %></p>
                       <p>Brand: <%= booking.bike.brand %></p>
                       <p>Status: <%= booking.bike.status %></p>
@@ -77,7 +77,7 @@
                     </div>
 
                     <div>
-                      <h2 class="card-bike-pricing"><%= booking.bike.price_per_day %>€ per day</h2>
+                      <h2 class="card-bike-pricing">€<%= booking.bike.price_per_day %> per day</h2>
                     </div>
 
                     <%= cl_image_tag booking.bike.user.photo.key, crop: :fill, class:"card-bike-user avatar-bordered" %>
