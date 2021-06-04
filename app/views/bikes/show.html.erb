@@ -2,8 +2,8 @@
 
 <div class="container mt-4">
   <%= simple_form_for [@bike, @booking], html: {class: 'form-inline'} do |f| %>
-  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+  <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
   <%= f.submit "Book now", class: "btn btn-green-filled" %>
   <% end %>
 </div>

@@ -1,16 +1,17 @@
 class BookingsController < ApplicationController
 
   def index
-    @list_bookings = Booking.all
+    # @list_bookings = Booking.all
 
     @bookings = policy_scope(Booking)
-    @my_bikes = current_user.bikes
+
     @owner = current_user.bikes.any?
     @bookings_as_renter = current_user.bookings
+
     if @owner
       @my_bikes = current_user.bikes
       @bookings_as_owner = Booking.where(bike_id: @my_bikes.pluck(:id))
-     end
+    end
   end
 
   def create
@@ -18,6 +19,8 @@ class BookingsController < ApplicationController
     authorize @booking
     @bike = Bike.find(params[:bike_id])
     @booking.user = current_user
+
+    @booking.total_price = (Date.parse(booking_params[:end_date]) - Date.parse(booking_params[:start_date])).to_i * @bike.price_per_day
 
     @booking.bike = @bike
     if @booking.save
