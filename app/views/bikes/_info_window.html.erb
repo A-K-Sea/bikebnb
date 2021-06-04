@@ -1,3 +1,5 @@
 <h6><%= bike.category %></h6>
 <p><%= bike.address %></p>
+<%= link_to bike_path(bike) do %>
 <%= cl_image_tag bike.photo.key, style: 'height:100px;width:auto;' %>
+<% end %>
